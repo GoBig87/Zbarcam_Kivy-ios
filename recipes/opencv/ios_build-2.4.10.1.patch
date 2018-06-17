@@ -1,0 +1,54 @@
+--- opencv-2.4.10.1/platforms/ios/build_framework.py
++++ opencv-2.4.10.1/platforms/ios/build_framework.py
+@@ -109,1 +109,1 @@
+-    if len(sys.argv) != 2:
++    if len(sys.argv) != 4:
+
+--- opencv-2.4.10.1/platforms/ios/build_framework.py
++++ opencv-2.4.10.1/platforms/ios/build_framework.py
+@@ -110,1 +110,1 @@
+-        print "Usage:\n\t./build_framework.py <outputdir>\n\n"
++        print "Usage:\n\t./build_framework.py <outputdir> <target> <arch>\n\n"
+
+--- opencv-2.4.10.1/platforms/ios/build_framework.py
++++ opencv-2.4.10.1/platforms/ios/build_framework.py
+@@ -113,1 +113,1 @@
+-    build_framework(os.path.abspath(os.path.join(os.path.dirname(sys.argv[0]), "../..")), os.path.abspath(sys.argv[1]))
++    build_framework(os.path.abspath(os.path.join(os.path.dirname(sys.argv[0]), "../..")), os.path.abspath(sys.argv[1]),sys.argv[2],sys.argv[3])
+
+--- opencv-2.4.10.1/platforms/ios/build_framework.py
++++ opencv-2.4.10.1/platforms/ios/build_framework.py
+@@ -97,1 +97,1 @@
+-def build_framework(srcroot, dstroot):
++def build_framework(srcroot, dstroot, target, arch):
+
+--- opencv-2.4.10.1/platforms/ios/build_framework.py
++++ opencv-2.4.10.1/platforms/ios/build_framework.py
+@@ -100,1 +100,1 @@
+-    targets = ["iPhoneOS", "iPhoneOS", "iPhoneOS", "iPhoneSimulator", "iPhoneSimulator"]
++
+
+--- opencv-2.4.10.1/platforms/ios/build_framework.py
++++ opencv-2.4.10.1/platforms/ios/build_framework.py
+@@ -101,1 +101,1 @@
+-    archs = ["armv7", "armv7s", "arm64", "i386", "x86_64"]
++
+
+--- opencv-2.4.10.1/platforms/ios/build_framework.py
++++ opencv-2.4.10.1/platforms/ios/build_framework.py
+@@ -102,1 +102,1 @@
+-    for i in range(len(targets)):
++
+
+--- opencv-2.4.10.1/platforms/ios/build_framework.py
++++ opencv-2.4.10.1/platforms/ios/build_framework.py
+@@ -103,1 +103,1 @@
+-        build_opencv(srcroot, os.path.join(dstroot, "build"), targets[i], archs[i])
++    build_opencv(srcroot, os.path.join(dstroot, "build"), target, arch)
+
+--- opencv-2.4.10.1/platforms/ios/build_framework.py
++++ opencv-2.4.10.1/platforms/ios/build_framework.py
+@@ -105,1 +105,1 @@
+-    put_framework_together(srcroot, dstroot)
++
+
